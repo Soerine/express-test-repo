@@ -9,10 +9,8 @@
 </head>
 
 <body>
-    <a href=entil.html>Side 2</a>
-    <h1>DET VIRKER!!</h1>
-
-    <div id="content"></div>
+    <a href=index.html>Forside</a>
+    <div id="content2"></div>
 
     <script>
         fetch('http://localhost:3000/api/test')
@@ -21,23 +19,19 @@
                 return response.json();
             }).then((json) => {
 
-                let content = document.getElementById('content');
-                let h2 = document.createElement('h2');
-                h2.textContent = json.Navn;
-                content.appendChild(h2);
-
-                let h3 = document.createElement('h3');
-                h3.textContent = json.Efternavn;
-                content.appendChild(h3);
+                let content2 = document.getElementById('content2');
 
                 let p = document.createElement('p');
                 p.textContent = "Alder: " + json.Alder;
-                content.appendChild(p);
+                content2.appendChild(p);
+
+                let h2 = document.createElement('h2');
+                h2.textContent = json.By;
+                content2.appendChild(h2)
 
             })
 
     </script>
 </body>
-
 
 </html>
