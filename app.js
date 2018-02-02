@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+const logger = require('morgan');
+app.use(logger('dev')); //Sender besked tilbage til terminalen, hvis nogen benytter min localhost. Den giver også besked om fejl, hvis der bliver skrevet forkert i browseren.
+
 app.get('/api/test', (req, res) => {
     res.json({
         Navn: "Per",
