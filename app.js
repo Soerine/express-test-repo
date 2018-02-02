@@ -31,6 +31,7 @@ app.post('/api/formular', (req, res) => {
 });
 
 app.use(express.static('public'));
+
 app.listen(3000, (err) => {
     if (err) {
         console.log(err);
